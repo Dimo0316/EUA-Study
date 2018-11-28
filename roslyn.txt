@@ -1,0 +1,14 @@
+https://github.com/dotnet/roslyn/wiki
+
+https://github.com/dotnet/roslyn
+
+https://msdn.microsoft.com/en-us/magazine/dn879356.aspx
+https://msdn.microsoft.com/en-us/magazine/dn904670.aspx
+https://github.com/dotnet/roslyn/wiki/Syntax%20Visualizer
+https://github.com/dotnet/roslyn/wiki/Samples-and-Walkthroughs
+https://github.com/dotnet/roslyn/tree/master/docs/analyzers
+https://blog.yowko.com/2017/05/debug-vsix.html
+https://technet.microsoft.com/zh-cn/library/dd264974.aspx
+https://github.com/DotNetAnalyzers/StyleCopAnalyzers
+https://github.com/dotnet/roslyn/wiki/Roslyn-Overview
+https://joshvarty.com/learn-roslyn-now/
