@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngineAnalyzer", "UnityEngineAnalyzer\UnityEngineAnalyzer\UnityEngineAnalyzer.csproj", "{24F88158-65D8-4481-95C8-587F7491CABE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngineAnalyzer.Vsix", "UnityEngineAnalyzer\UnityEngineAnalyzer.Vsix\UnityEngineAnalyzer.Vsix.csproj", "{621DFC1E-175F-4EE7-BE46-1DB60BD19E63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24F88158-65D8-4481-95C8-587F7491CABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24F88158-65D8-4481-95C8-587F7491CABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24F88158-65D8-4481-95C8-587F7491CABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24F88158-65D8-4481-95C8-587F7491CABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{621DFC1E-175F-4EE7-BE46-1DB60BD19E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{621DFC1E-175F-4EE7-BE46-1DB60BD19E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{621DFC1E-175F-4EE7-BE46-1DB60BD19E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{621DFC1E-175F-4EE7-BE46-1DB60BD19E63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02BC86CD-6D62-4388-89F9-4825B32F378B}
+	EndGlobalSection
+EndGlobal

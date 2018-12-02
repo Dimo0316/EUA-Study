@@ -1,0 +1,4 @@
+C:\Users\honghao\source\repos\UnityEngineAnalyzer\UnityEngineAnalyzer\UnityEngineAnalyzer.Test\obj\Debug\netcoreapp2.0\UnityEngineAnalyzer.Test.csprojAssemblyReference.cache
+C:\Users\honghao\source\repos\UnityEngineAnalyzer\UnityEngineAnalyzer\UnityEngineAnalyzer.Test\obj\Debug\netcoreapp2.0\UnityEngineAnalyzer.Test.csproj.CoreCompileInputs.cache
+C:\Users\honghao\source\repos\UnityEngineAnalyzer\UnityEngineAnalyzer\UnityEngineAnalyzer.Test\obj\Debug\netcoreapp2.0\UnityEngineAnalyzer.Test.AssemblyInfoInputs.cache
+C:\Users\honghao\source\repos\UnityEngineAnalyzer\UnityEngineAnalyzer\UnityEngineAnalyzer.Test\obj\Debug\netcoreapp2.0\UnityEngineAnalyzer.Test.AssemblyInfo.cs

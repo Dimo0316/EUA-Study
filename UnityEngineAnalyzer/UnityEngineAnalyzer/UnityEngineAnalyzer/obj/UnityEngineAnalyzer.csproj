@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BFB2BB34-FED8-48CC-9B83-A6E38BA5666C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnityEngineAnalyzer</RootNamespace>
+    <AssemblyName>UnityEngineAnalyzer</AssemblyName>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>UnityEngineAnalyzer.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>UnityEngineAnalyzer.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AOT\DoNotUseLinqAnalyzer.cs" />
+    <Compile Include="AOT\DoNotUseLinqResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseLinqResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="AOT\DoNotUseReflectionEmitAnalyzer.cs" />
+    <Compile Include="AOT\DoNotUseReflectionEmitResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseReflectionEmitResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="AOT\DoNotUseRemotingAnalyzer.cs" />
+    <Compile Include="AOT\DoNotUseRemotingResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseRemotingResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="AOT\TypeGetTypeAnalyzer.cs" />
+    <Compile Include="AOT\TypeGetTypeResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TypeGetTypeResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Camera\DoNotUseCameraMainAnalyzer.cs" />
+    <Compile Include="Camera\DoNotUseCameraMainResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseCameraMainResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Camera\DoNotUseCameraRectAnalyzer.cs" />
+    <Compile Include="Camera\DoNotUseCameraRectResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseCameraRectResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Containers\ArrayListAnalyzer.cs" />
+    <Compile Include="Containers\ArrayListResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArrayListResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Containers\CacheContainerApiAnalyzer.cs" />
+    <Compile Include="Closure\DoNotUseLambdaInGenericMethodAnalyzer.cs" />
+    <Compile Include="Closure\DoNotUseLambdaInGenericMethodResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseLambdaInGenericMethodResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Closure\MethodToDelegateAnalyzer.cs" />
+    <Compile Include="Closure\MethodToDelegateResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MethodToDelegateResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonAnalyzer.cs" />
+    <Compile Include="CompareTag\UseCompareTagAnalyzer.cs" />
+    <Compile Include="CompareTag\UseCompareTagResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UseCompareTagResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Containers\CacheContainerApiResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CacheContainerApiResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Containers\DoNotInitContainerWithoutSizeAnalyzer.cs" />
+    <Compile Include="Containers\DoNotInitContainerWithoutSizeResources2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotInitContainerWithoutSizeResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Containers\DoNotNewContainerInUpdateAnalyzer.cs" />
+    <Compile Include="Containers\DoNotNewContainerInUpdateResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotNewContainerInUpdateResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Containers\DoNotReturnContainerAnalyzer.cs" />
+    <Compile Include="Containers\DoNotReturnContainerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotReturnContainerResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Containers\DoNotUseEnumOrStructAsKeyAnalyzer.cs" />
+    <Compile Include="Containers\DoNotUseEnumOrStructAsKeyResources2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseEnumOrStructAsKeyResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Containers\DoNotUseMultiDimensionalArrayAnalyzer.cs" />
+    <Compile Include="Containers\DoNotUseMultiDimensionalArrayResources2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseMultiDimensionalArrayResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Containers\DoNotUseParamsAnalyzer.cs" />
+    <Compile Include="Containers\DoNotUseParamsResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseParamsResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Coroutines\DoNotUseCoroutinesAnalyzer.cs" />
+    <Compile Include="Coroutines\DoNotUseCoroutinesResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseCoroutinesResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Coroutines\DoNotYieldReturnZeroAnalyzer.cs" />
+    <Compile Include="Coroutines\DoNotYieldReturnZeroResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotYieldReturnZeroResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Memory\UnityUnusedFlagAnalyzer.cs" />
+    <Compile Include="Memory\UnityUnusedFlagResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnityUnusedFlagResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Memory\UnmanagedAnalyzer.cs" />
+    <Compile Include="Memory\UnmanagedResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnmanagedResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Particles\ParticleApiWithChildrenAnalyzer.cs" />
+    <Compile Include="Particles\ParticleApiWithChildrenResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ParticleApiWithChildrenResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Physics\DoNotMoveRigidbodyByTransformAnalyzer.cs" />
+    <Compile Include="Physics\DoNotMoveRigidbodyByTransformResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotMoveRigidbodyByTransformResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Physics\RaycastMaxDistanceAnalyzer.cs" />
+    <Compile Include="Physics\RaycastMaxDistanceResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RaycastMaxDistanceResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Preprocessor\PreprocessorDirectiveUnityEditorAndDebugAnalyzer.cs" />
+    <Compile Include="Preprocessor\PreprocessorDirectiveUnityEditorAndDebugResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PreprocessorDirectiveUnityEditorAndDebugResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Preprocessor\UsingUnityEditorAnalyzer.cs" />
+    <Compile Include="Preprocessor\UsingUnityEditorResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsingUnityEditorResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="String\DoNotUseStringFormatAnalyzer.cs" />
+    <Compile Include="String\DoNotUseStringFormatResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseStringFormatResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="String\UseStringCatenatingInsteadOfFormatAnalyzer.cs" />
+    <Compile Include="String\UseStringCatenatingInsteadOfFormatResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UseStringCatenatingInsteadOfFormatResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Textures\TextureNonReadableAnalyzer.cs" />
+    <Compile Include="Textures\TextureNonReadableResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TextureNonReadableResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Transform\TransformUpdateAnalyzer.cs" />
+    <Compile Include="Transform\TransformUpdateResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransformUpdateResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UEASettingReader.cs" />
+    <Compile Include="UnityDebug\DoNotUseDefaultDebugAnalyzer.cs" />
+    <Compile Include="UnityDebug\DoNotUseDefaultDebugResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseDefaultDebugResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DiagnosticCategories.cs" />
+    <Compile Include="DiagnosticDescriptors.cs" />
+    <Compile Include="DiagnosticIDs.cs" />
+    <Compile Include="EmptyMonoBehaviourMethods\EmptyMonoBehaviourMethodsAnalyzer.cs" />
+    <Compile Include="EmptyMonoBehaviourMethods\EmptyMonoBehaviourMethodsResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmptyMonoBehaviourMethodsResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="FindMethodsInUpdate\DoNotUseFindMethodsInUpdateAnalyzer.cs" />
+    <Compile Include="FindMethodsInUpdate\DoNotUseFindMethodsInUpdateResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseFindMethodsInUpdateResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ForEachInUpdate\DoNotUseForEachInUpdateResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseForEachInUpdateResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ForEachInUpdate\DoNotUseForEachInUpdate.cs" />
+    <Compile Include="IL2CPP\UnsealedDerivedClassAnalyzer.cs" />
+    <Compile Include="IL2CPP\UnsealedDerivedClassResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnsealedDerivedClassResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Closure\DoNotUseLambdaAnalyzer.cs" />
+    <Compile Include="Closure\DoNotUseLambdaResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseLambdaResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MarkableInvocationGraph.cs" />
+    <Compile Include="Material\DoNotUseMaterialAnalyzer.cs" />
+    <Compile Include="Material\DoNotUseMaterialResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseMaterialResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MonoBehaviourInfo.cs" />
+    <Compile Include="OnGUI\DoNotUseOnGUIAnalyzer.cs" />
+    <Compile Include="OnGUI\DoNotUseOnGUIResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseOnGUIResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Regex\DoNotUseRegexAnalyzer.cs" />
+    <Compile Include="Regex\DoNotUseRegexResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseRegexResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReplaceOldGCMethods\ReplaceOldGCMethodsAnalyzer.cs" />
+    <Compile Include="ReplaceOldGCMethods\ReplaceOldGCMethodsResources2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReplaceOldGCMethodsResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RolsynExtensions.cs" />
+    <Compile Include="StringMethods\DoNotUseStringMethodsAnalyzer.cs" />
+    <Compile Include="StringMethods\DoNotUseStringMethodsResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseStringMethodsResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StringMethods\InvokeFunctionMissingAnalyzer.cs" />
+    <Compile Include="StringMethods\InvokeFunctionMissingResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvokeFunctionMissingResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StringMethods\UseHashInsteadOfStringAnalyzer.cs" />
+    <Compile Include="StringMethods\UseHashInsteadOfStringResources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UseHashInsteadOfStringResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="String\DoNotUseAddOpOnStringAnalyzer.cs" />
+    <Compile Include="String\DoNotUseAddOpOnStringResources2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseAddOpOnStringResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="String\DoNotUseEqualOpOnStringAnalyzer.cs" />
+    <Compile Include="String\DoNotUseEqualOpOnStringResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseEqualOpOnStringResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="String\DoNotUseStringCompareMethodsAnalyzer.cs" />
+    <Compile Include="String\DoNotUseStringCompareMethodsResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseStringCompareMethodsResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UnityThread\GameObjectInDestructorAnalyzer.cs" />
+    <Compile Include="UnityThread\GameObjectInDestructorResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GameObjectInDestructorResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ValueType\BoxingAnalyzer.cs" />
+    <Compile Include="ValueType\BoxingResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BoxingResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Variable\LocalFieldNeverUsedAnalyzer.cs" />
+    <Compile Include="Variable\LocalFieldNeverUsedResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalFieldNeverUsedResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Variable\PrivateFieldNeverUsedAnalyzer.cs" />
+    <Compile Include="Variable\PrivateFieldNeverUsedResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrivateFieldNeverUsedResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Vectors\CalculationOrderAnalyzer.cs" />
+    <Compile Include="Vectors\CalculationOrderResources2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CalculationOrderResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Vectors\DoNotUseVectorDistanceAnalyzer.cs" />
+    <Compile Include="Vectors\DoNotUseVectorDistanceResources2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoNotUseVectorDistanceResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AOT\DoNotUseLinqResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseLinqResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AOT\DoNotUseReflectionEmitResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseReflectionEmitResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AOT\DoNotUseRemotingResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseRemotingResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AOT\TypeGetTypeResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TypeGetTypeResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Camera\DoNotUseCameraMainResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseCameraMainResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Camera\DoNotUseCameraRectResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseCameraRectResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Closure\DoNotUseLambdaInGenericMethodResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseLambdaInGenericMethodResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Closure\MethodToDelegateResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MethodToDelegateResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompareTag\UseCompareTagResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UseCompareTagResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Containers\ArrayListResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ArrayListResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Containers\CacheContainerApiResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CacheContainerApiResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Containers\DoNotInitContainerWithoutSizeResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotInitContainerWithoutSizeResources2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Containers\DoNotNewContainerInUpdateResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotNewContainerInUpdateResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Containers\DoNotReturnContainerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotReturnContainerResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Containers\DoNotUseEnumOrStructAsKeyResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseEnumOrStructAsKeyResources2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Containers\DoNotUseMultiDimensionalArrayResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseMultiDimensionalArrayResources2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Containers\DoNotUseParamsResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseParamsResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coroutines\DoNotYieldReturnZeroResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotYieldReturnZeroResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Memory\UnityUnusedFlagResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UnityUnusedFlagResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Memory\UnmanagedResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UnmanagedResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Particles\ParticleApiWithChildrenResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ParticleApiWithChildrenResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Physics\DoNotMoveRigidbodyByTransformResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotMoveRigidbodyByTransformResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Physics\RaycastMaxDistanceResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RaycastMaxDistanceResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preprocessor\PreprocessorDirectiveUnityEditorAndDebugResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PreprocessorDirectiveUnityEditorAndDebugResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preprocessor\UsingUnityEditorResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UsingUnityEditorResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="String\DoNotUseStringFormatResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseStringFormatResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="String\UseStringCatenatingInsteadOfFormatResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UseStringCatenatingInsteadOfFormatResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Textures\TextureNonReadableResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TextureNonReadableResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transform\TransformUpdateResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TransformUpdateResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnityDebug\DoNotUseDefaultDebugResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseDefaultDebugResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmptyMonoBehaviourMethods\EmptyMonoBehaviourMethodsResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmptyMonoBehaviourMethodsResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindMethodsInUpdate\DoNotUseFindMethodsInUpdateResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseFindMethodsInUpdateResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForEachInUpdate\DoNotUseForEachInUpdateResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseForEachInUpdateResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coroutines\DoNotUseCoroutinesResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseCoroutinesResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IL2CPP\UnsealedDerivedClassResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UnsealedDerivedClassResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Closure\DoNotUseLambdaResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseLambdaResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material\DoNotUseMaterialResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseMaterialResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnGUI\DoNotUseOnGUIResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseOnGUIResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regex\DoNotUseRegexResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseRegexResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReplaceOldGCMethods\ReplaceOldGCMethodsResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReplaceOldGCMethodsResources2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StringMethods\DoNotUseStringMethodsResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseStringMethodsResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StringMethods\InvokeFunctionMissingResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InvokeFunctionMissingResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StringMethods\UseHashInsteadOfStringResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UseHashInsteadOfStringResources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="String\DoNotUseAddOpOnStringResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseAddOpOnStringResources2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="String\DoNotUseEqualOpOnStringResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseEqualOpOnStringResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="String\DoNotUseStringCompareMethodsResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseStringCompareMethodsResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnityThread\GameObjectInDestructorResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GameObjectInDestructorResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValueType\BoxingResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BoxingResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Variable\LocalFieldNeverUsedResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalFieldNeverUsedResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Variable\PrivateFieldNeverUsedResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrivateFieldNeverUsedResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vectors\CalculationOrderResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CalculationOrderResources2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vectors\DoNotUseVectorDistanceResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DoNotUseVectorDistanceResources2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Diagnostic.nuspec">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="tools\install.ps1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="tools\uninstall.ps1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ReadMe.txt" />
+    <None Include="UnityEngineAnalyzer.ruleset" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeAnalysis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeAnalysis.Common.1.0.0\lib\portable-net45+win8\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeAnalysis.CSharp.1.0.0\lib\portable-net45+win8\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeAnalysis.CSharp.Workspaces.1.0.0\lib\portable-net45+win8\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeAnalysis.Workspaces.Common.1.0.0\lib\portable-net45+win8\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.1.36.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Collections.Immutable.1.1.36\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Composition.AttributedModel, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.AttributedModel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Composition.Convention, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Convention.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Composition.Hosting, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Hosting.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Composition.Runtime, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.TypedParts.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=1.0.21.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Reflection.Metadata.1.0.21\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\v4.6\Microsoft.Portable.CSharp.targets" />
+  <Target Name="AfterBuild">
+    <GetAssemblyIdentity AssemblyFiles="$(OutDir)\$(AssemblyName).dll">
+      <Output TaskParameter="Assemblies" ItemName="AnalyzerAssemblyInfo" />
+    </GetAssemblyIdentity>
+    <Exec Command="&quot;$(SolutionDir)packages\NuGet.CommandLine.2.8.5\tools\NuGet.exe&quot; pack Diagnostic.nuspec -NoPackageAnalysis -Version %(AnalyzerAssemblyInfo.Version) -OutputDirectory ." WorkingDirectory="$(OutDir)" LogStandardErrorAsError="true" ConsoleToMSBuild="true">
+      <Output TaskParameter="ConsoleOutput" PropertyName="OutputOfExec" />
+    </Exec>
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
