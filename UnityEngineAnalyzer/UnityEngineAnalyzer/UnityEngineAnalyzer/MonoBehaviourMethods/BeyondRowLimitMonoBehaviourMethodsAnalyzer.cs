@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -114,6 +115,54 @@ namespace UnityEngineAnalyzer.MonoBehaviourMethods
                     {
                         continue;
                     }
+                    
+                    var ifStatementSyntaxs = methodSyntax.DescendantNodes().OfType<IfStatementSyntax>();
+                    
+                    foreach (var ifStatementSyntax in ifStatementSyntaxs)
+                    {
+                        if (ifStatementSyntax.Parent.Parent.IsKind(SyntaxKind.MethodDeclaration))//MethodDeclarationSyntax);
+                        {
+                            var statement = ifStatementSyntax.Statement.ToFullString();
+                            int length = ReturnStringRowCount(statement);
+                            searched[methodSymbol] += length - 1;
+                        }
+                    }
+
+                    var forStatementSyntaxs = methodSyntax.DescendantNodes().OfType<ForStatementSyntax>();
+
+                    foreach (var forStatementSyntax in forStatementSyntaxs)
+                    {
+                        if (forStatementSyntax.Parent.Parent.IsKind(SyntaxKind.MethodDeclaration))//MethodDeclarationSyntax);
+                        {
+                            var statement = forStatementSyntax.Statement.ToFullString();
+                            int length = ReturnStringRowCount(statement);
+                            searched[methodSymbol] += length - 1;
+                        }
+                    }
+
+                    var foreachStatementSyntaxs = methodSyntax.DescendantNodes().OfType<ForEachStatementSyntax>();
+
+                    foreach (var foreachStatementSyntax in foreachStatementSyntaxs)
+                    {
+                        if (foreachStatementSyntax.Parent.Parent.IsKind(SyntaxKind.MethodDeclaration))//MethodDeclarationSyntax);
+                        {
+                            var statement = foreachStatementSyntax.Statement.ToFullString();
+                            int length = ReturnStringRowCount(statement);
+                            searched[methodSymbol] += length - 1;
+                        }
+                    }
+
+                    var whileStatementSyntaxs = methodSyntax.DescendantNodes().OfType<WhileStatementSyntax>();
+
+                    foreach (var whileStatementSyntax in whileStatementSyntaxs)
+                    {
+                        if (whileStatementSyntax.Parent.Parent.IsKind(SyntaxKind.MethodDeclaration))//MethodDeclarationSyntax);
+                        {
+                            var statement = whileStatementSyntax.Statement.ToFullString();
+                            int length = ReturnStringRowCount(statement);
+                            searched[methodSymbol] += length - 1;
+                        }
+                    }
 
                     searched[methodSymbol] += methodSyntax.Body.Statements.Count;
 
@@ -138,5 +187,13 @@ namespace UnityEngineAnalyzer.MonoBehaviourMethods
             
             return searched[methodSymbol];
         }
+
+        private static int ReturnStringRowCount(string stringToSplit)
+        {
+            int row = 0;
+            string[] stringToSplits = System.Text.RegularExpressions.Regex.Split(stringToSplit,@";\s\n", RegexOptions.IgnoreCase);
+            return stringToSplits.Length;
+        }
     }
 }
+

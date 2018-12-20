@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
 
 namespace UnityEngineAnalyzer
 {
@@ -19,9 +15,8 @@ namespace UnityEngineAnalyzer
     public class UEASettingReader
     {
         static string sPath = Environment.GetEnvironmentVariable("LOCALAPPDATA");
-        //private static string configFilePath = @"C:\Users\honghao\AppData\Local\uea_config.txt";
         private static string configFilePath = sPath + @"\uea_config.txt";
-        //LOCALAPPDATA
+        
         private static UEASettings uEASettings = new UEASettings();
         
         /// Read config file. If there is no file, generate default one.
